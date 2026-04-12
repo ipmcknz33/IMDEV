@@ -57,22 +57,6 @@ const featuredWork = [
     href: "/inkplan",
     live: "https://ink-plan-l95o.vercel.app/",
   },
-  {
-    tag: "SaaS · Subscription",
-    title: "Summarist",
-    desc: "Full-stack subscription platform with Firebase auth, protected routes, Stripe payments, and scalable UI architecture.",
-    tech: ["Next.js", "Firebase", "Stripe", "TypeScript"],
-    href: "/projects",
-    live: null,
-  },
-  {
-    tag: "AI · Production",
-    title: "Skinstric",
-    desc: "AI skincare analysis app with camera-to-analysis workflow, real-time feedback, and GSAP animations — built for a live client.",
-    tech: ["Next.js", "AI", "GSAP", "TailwindCSS"],
-    href: "/projects",
-    live: null,
-  },
 ];
 
 export default function Home() {
