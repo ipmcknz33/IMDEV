@@ -6,48 +6,54 @@ const services = [
   {
     icon: "⬡",
     title: "Web Development",
-    desc: "Fast, scalable websites and web apps built with Next.js, React, TypeScript, and Tailwind CSS.",
+    desc: "Marketing sites, landing pages, and company websites built fast and clean. Modern stack, performant, and ready to scale.",
     href: "/services#web",
   },
   {
     icon: "◈",
     title: "App Builds",
-    desc: "Full product builds from concept to deployment — auth, payments, dashboards, and clean architecture.",
+    desc: "Full product builds with auth, payments, dashboards, and user accounts. From concept to deployed product.",
     href: "/services#apps",
   },
   {
     icon: "⟁",
     title: "AI Integration",
-    desc: "Embed intelligent features into your product — LLM workflows, AI-powered UX, and real-time analysis.",
+    desc: "LLM-powered features, real-time analysis, and AI-enhanced UX. We bring intelligent tooling into your product.",
     href: "/services#ai",
   },
   {
     icon: "◎",
     title: "Consulting",
-    desc: "Technical direction, architecture review, and product strategy for teams who need sharp execution.",
+    desc: "Architecture review, stack selection, and technical direction. Sharp perspective before you write a line of code.",
     href: "/services#consult",
   },
   {
     icon: "⊕",
     title: "Collaborations",
-    desc: "Open to working with founders, agencies, and developers on meaningful builds and partnerships.",
+    desc: "Partnerships with founders, agencies, and teams on meaningful builds — equity, revenue-share, or contract.",
     href: "/services#collab",
+  },
+  {
+    icon: "✦",
+    title: "Support & Maintenance",
+    desc: "Remote support, bug fixes, feature additions, and performance tuning for existing codebases and live products.",
+    href: "/services#support",
   },
 ];
 
 const stats = [
-  { num: "3", label: "Production apps shipped" },
-  { num: "2", label: "Active roles" },
+  { num: "3", label: "Products shipped" },
   { num: "100%", label: "Deadline completion rate" },
   { num: "3-day", label: "Avg delivery cycle" },
+  { num: "∞", label: "Room to scale" },
 ];
 
-const featuredProjects = [
+const featuredWork = [
   {
-    tag: "SaaS · Flagship",
+    tag: "Flagship · SaaS",
     title: "InkPlan",
-    desc: "Full-stack tattoo training SaaS with authentication, user progress tracking, REST API, and subscription tiers built with Node.js and Express.",
-    tech: ["Next.js", "Node.js", "Express", "Auth"],
+    desc: "AI-powered tattoo training platform. Structured learning, style exploration, and subscription tiers — built from scratch as a real niche product.",
+    tech: ["Next.js", "Node.js", "Express", "Auth", "REST API"],
     href: "/inkplan",
     live: "https://ink-plan-l95o.vercel.app/",
   },
@@ -60,9 +66,9 @@ const featuredProjects = [
     live: null,
   },
   {
-    tag: "AI · Skincare",
+    tag: "AI · Production",
     title: "Skinstric",
-    desc: "AI-powered skincare analysis app with camera-to-analysis workflow, real-time feedback, and GSAP animations. Built at Skinstric AI.",
+    desc: "AI skincare analysis app with camera-to-analysis workflow, real-time feedback, and GSAP animations — built for a live client.",
     tech: ["Next.js", "AI", "GSAP", "TailwindCSS"],
     href: "/projects",
     live: null,
@@ -75,10 +81,10 @@ export default function Home() {
       <div
         className="orb"
         style={{
-          width: 220,
-          height: 220,
-          left: "6%",
-          top: 80,
+          width: 240,
+          height: 240,
+          left: "4%",
+          top: 60,
           background: "rgba(0,245,196,0.07)",
         }}
       />
@@ -87,8 +93,8 @@ export default function Home() {
         style={{
           width: 180,
           height: 180,
-          right: "8%",
-          top: 140,
+          right: "6%",
+          top: 160,
           background: "rgba(167,139,250,0.06)",
           animationDelay: "2s",
         }}
@@ -99,7 +105,7 @@ export default function Home() {
         <section
           className="panel fade-up"
           style={{
-            padding: "80px 48px",
+            padding: "88px 56px",
             marginBottom: 72,
             textAlign: "center",
           }}
@@ -109,32 +115,29 @@ export default function Home() {
             style={{
               position: "relative",
               zIndex: 1,
-              maxWidth: 780,
+              maxWidth: 820,
               margin: "0 auto",
             }}
           >
-            <span className="eyebrow fade-up" style={{ marginBottom: 20 }}>
-              IMDEV · Isaac Mackenzie
+            <span className="eyebrow fade-up" style={{ marginBottom: 22 }}>
+              IMDEV · Software Development Studio
             </span>
-
-            <h1 className="fade-up-1" style={{ marginBottom: 24 }}>
-              Frontend engineer who{" "}
-              <span style={{ color: "var(--accent)" }}>ships fast.</span>
+            <h1 className="fade-up-1" style={{ marginBottom: 26 }}>
+              We build software{" "}
+              <span style={{ color: "var(--accent)" }}>that ships.</span>
             </h1>
-
             <p
               className="fade-up-2"
               style={{
-                maxWidth: 580,
-                margin: "0 auto 36px",
-                fontSize: "1.05rem",
+                maxWidth: 600,
+                margin: "0 auto 40px",
+                fontSize: "1.1rem",
               }}
             >
-              React · Next.js · TypeScript · AI Integration. Building
-              production-level apps with clean architecture, fast delivery
-              cycles, and real product thinking.
+              Web apps, SaaS products, AI integrations, and scalable digital
+              experiences — built with precision, delivered fast, and designed
+              to grow with your business.
             </p>
-
             <div
               className="fade-up-3"
               style={{
@@ -144,11 +147,11 @@ export default function Home() {
                 flexWrap: "wrap",
               }}
             >
-              <Link href="/projects" className="btn-primary">
-                View Projects
+              <Link href="/contact" className="btn-primary">
+                Start a Project
               </Link>
-              <Link href="/contact" className="btn-secondary">
-                Hire Me
+              <Link href="/projects" className="btn-secondary">
+                View Our Work
               </Link>
             </div>
           </div>
@@ -158,18 +161,18 @@ export default function Home() {
         <section
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
+            gridTemplateColumns: "repeat(4, 1fr)",
             gap: 16,
-            marginBottom: 72,
+            marginBottom: 88,
           }}
         >
           {stats.map((s) => (
             <div
               key={s.label}
               className="card-flat"
-              style={{ textAlign: "center", padding: "24px 16px" }}
+              style={{ textAlign: "center", padding: "28px 16px" }}
             >
-              <div className="stat-num" style={{ marginBottom: 8 }}>
+              <div className="stat-num" style={{ marginBottom: 10 }}>
                 {s.num}
               </div>
               <p
@@ -186,24 +189,74 @@ export default function Home() {
           ))}
         </section>
 
-        {/* ── Featured Projects ────────────────────────── */}
-        <section style={{ marginBottom: 80 }}>
+        {/* ── Services ────────────────────────────────── */}
+        <section style={{ marginBottom: 88 }}>
+          <div style={{ textAlign: "center", marginBottom: 52 }}>
+            <span className="eyebrow" style={{ marginBottom: 14 }}>
+              What We Build
+            </span>
+            <h2>Everything your product needs.</h2>
+            <p style={{ maxWidth: 520, margin: "16px auto 0" }}>
+              From first line of code to live product — we handle the full
+              stack.
+            </p>
+          </div>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gap: 20,
+            }}
+          >
+            {services.map((s) => (
+              <Link
+                key={s.title}
+                href={s.href}
+                className="card"
+                style={{ display: "block" }}
+              >
+                <div
+                  className="icon-box"
+                  style={{ marginBottom: 18, fontSize: "1.4rem" }}
+                >
+                  {s.icon}
+                </div>
+                <h3 style={{ marginBottom: 10 }}>{s.title}</h3>
+                <p style={{ fontSize: "0.9rem" }}>{s.desc}</p>
+                <p
+                  style={{
+                    marginTop: 18,
+                    fontSize: "0.72rem",
+                    fontFamily: "'JetBrains Mono', monospace",
+                    color: "var(--accent)",
+                    letterSpacing: "0.08em",
+                  }}
+                >
+                  Learn more →
+                </p>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* ── Work ────────────────────────────────────── */}
+        <section style={{ marginBottom: 88 }}>
           <div
             style={{
               display: "flex",
               alignItems: "flex-end",
               justifyContent: "space-between",
-              marginBottom: 40,
+              marginBottom: 44,
               flexWrap: "wrap",
               gap: 16,
             }}
           >
             <div>
-              <span className="eyebrow" style={{ marginBottom: 10 }}>
-                Featured Work
+              <span className="eyebrow" style={{ marginBottom: 12 }}>
+                Our Work
               </span>
               <h2 style={{ fontSize: "clamp(1.5rem, 2.8vw, 2.2rem)" }}>
-                Production apps I&apos;ve built.
+                Products we&apos;ve built and shipped.
               </h2>
             </div>
             <Link
@@ -214,15 +267,14 @@ export default function Home() {
               All Projects →
             </Link>
           </div>
-
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gridTemplateColumns: "repeat(3, 1fr)",
               gap: 24,
             }}
           >
-            {featuredProjects.map((p) => (
+            {featuredWork.map((p) => (
               <div
                 key={p.title}
                 className="card"
@@ -269,57 +321,116 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── Services ────────────────────────────────── */}
-        <section style={{ marginBottom: 80 }}>
-          <div style={{ textAlign: "center", marginBottom: 48 }}>
-            <span className="eyebrow" style={{ marginBottom: 12 }}>
-              What I Do
-            </span>
-            <h2>Full-spectrum product development.</h2>
-          </div>
-
+        {/* ── Why IMDEV ───────────────────────────────── */}
+        <section style={{ marginBottom: 88 }}>
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-              gap: 20,
+              gridTemplateColumns: "1fr 1fr",
+              gap: 56,
+              alignItems: "center",
             }}
           >
-            {services.map((s) => (
-              <Link
-                key={s.title}
-                href={s.href}
-                className="card"
-                style={{ display: "block" }}
+            <div>
+              <span className="eyebrow" style={{ marginBottom: 14 }}>
+                Why IMDEV
+              </span>
+              <h2
+                style={{
+                  fontSize: "clamp(1.5rem, 2.8vw, 2.2rem)",
+                  marginBottom: 20,
+                }}
               >
+                A studio built for execution.
+              </h2>
+              <p style={{ marginBottom: 16 }}>
+                We don&apos;t just write code — we build products. Every project
+                starts with understanding your business, your users, and your
+                goals. Then we execute with speed and precision.
+              </p>
+              <p style={{ marginBottom: 32 }}>
+                Leveraging modern tooling and AI to deliver faster without
+                sacrificing quality. Zero missed deadlines. Clean, maintainable
+                code you can hand to any team.
+              </p>
+              <Link
+                href="/about"
+                className="btn-ghost"
+                style={{ minHeight: 40, fontSize: "0.72rem" }}
+              >
+                About IMDEV →
+              </Link>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+              {[
+                {
+                  label: "Fast delivery",
+                  desc: "3-day average cycle on production builds",
+                },
+                {
+                  label: "Full stack",
+                  desc: "Frontend, backend, AI, and everything between",
+                },
+                {
+                  label: "Zero misses",
+                  desc: "100% project completion rate across all work",
+                },
+                {
+                  label: "Remote-ready",
+                  desc: "Built to work with teams across any timezone",
+                },
+              ].map((item) => (
                 <div
-                  className="icon-box"
-                  style={{ marginBottom: 18, fontSize: "1.4rem" }}
-                >
-                  {s.icon}
-                </div>
-                <h3 style={{ marginBottom: 10 }}>{s.title}</h3>
-                <p style={{ fontSize: "0.9rem" }}>{s.desc}</p>
-                <p
+                  key={item.label}
+                  className="card-flat"
                   style={{
-                    marginTop: 16,
-                    fontSize: "0.72rem",
-                    fontFamily: "'JetBrains Mono', monospace",
-                    color: "var(--accent)",
-                    letterSpacing: "0.08em",
+                    padding: "18px 22px",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 16,
                   }}
                 >
-                  Learn more →
-                </p>
-              </Link>
-            ))}
+                  <span
+                    style={{
+                      color: "var(--accent)",
+                      fontFamily: "'JetBrains Mono', monospace",
+                      fontSize: "0.8rem",
+                      flexShrink: 0,
+                    }}
+                  >
+                    →
+                  </span>
+                  <div>
+                    <p
+                      style={{
+                        fontSize: "0.9rem",
+                        fontWeight: 600,
+                        color: "var(--text)",
+                        marginBottom: 2,
+                      }}
+                    >
+                      {item.label}
+                    </p>
+                    <p
+                      style={{
+                        fontSize: "0.82rem",
+                        color: "var(--text-muted)",
+                        lineHeight: 1.5,
+                      }}
+                    >
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* ── CTA ─────────────────────────────────────── */}
         <section
           className="panel"
-          style={{ padding: "64px 48px", textAlign: "center" }}
+          style={{ padding: "72px 56px", textAlign: "center" }}
         >
           <div className="panel-glow" />
           <div
@@ -330,21 +441,20 @@ export default function Home() {
               margin: "0 auto",
             }}
           >
-            <span className="eyebrow" style={{ marginBottom: 14 }}>
-              Open to Work
+            <span className="eyebrow" style={{ marginBottom: 16 }}>
+              Ready to Build?
             </span>
             <h2
               style={{
-                fontSize: "clamp(1.6rem, 3vw, 2.4rem)",
-                marginBottom: 16,
+                fontSize: "clamp(1.6rem, 3vw, 2.6rem)",
+                marginBottom: 18,
               }}
             >
-              Looking for remote frontend roles.
+              Let&apos;s turn your idea into a real product.
             </h2>
-            <p style={{ marginBottom: 32 }}>
-              Frontend engineer with production experience in React, Next.js,
-              and TypeScript. Available for full-time remote positions — fast
-              learner, zero missed deadlines.
+            <p style={{ marginBottom: 36, fontSize: "1.05rem" }}>
+              Whether you need a website, a full app, an AI integration, or a
+              remote engineering partner — IMDEV is ready to execute.
             </p>
             <div
               style={{
@@ -355,10 +465,10 @@ export default function Home() {
               }}
             >
               <Link href="/contact" className="btn-primary">
-                Get In Touch
+                Start a Project
               </Link>
-              <Link href="/about" className="btn-secondary">
-                View Resume
+              <Link href="/services" className="btn-secondary">
+                View Services
               </Link>
             </div>
           </div>

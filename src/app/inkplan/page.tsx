@@ -5,83 +5,56 @@ import Link from "next/link";
 const features = [
   {
     icon: "⬡",
-    title: "Guided Practice",
-    desc: "Structured learning paths instead of random content. Students follow a clear progression from fundamentals to advanced styles.",
+    title: "Guided Learning Paths",
+    desc: "Structured progression from fundamentals to advanced styles. Students follow a clear path instead of random content.",
   },
   {
     icon: "◈",
-    title: "Style Exploration",
+    title: "Style Explorer",
     desc: "Curated reference libraries organized by tattoo style — traditional, realism, blackwork, neo-trad, and more.",
   },
   {
     icon: "⟁",
     title: "AI-Powered Feedback",
-    desc: "Upload practice work and receive AI-generated critique based on the style being learned and technical benchmarks.",
+    desc: "Upload practice work and receive AI-generated critique based on the style being studied and technical benchmarks.",
   },
   {
     icon: "◎",
-    title: "Tiered Access",
-    desc: "Trial, subscription, and premium tiers — each unlocking deeper content, community features, and live feedback sessions.",
+    title: "Progress Tracking",
+    desc: "Visual milestones and skill tracking that show exactly where a student is and what to focus on next.",
   },
   {
     icon: "⊕",
-    title: "Progress Tracking",
-    desc: "Visual milestones and skill trees that show exactly where a student is and what they should focus on next.",
+    title: "Subscription Tiers",
+    desc: "Trial, subscription, and premium access — each unlocking deeper content, community features, and live feedback.",
   },
   {
     icon: "✦",
-    title: "Community Layer",
-    desc: "Peer review, mentor matching, and a curated feed of high-quality practice work to stay inspired.",
-  },
-];
-
-const tiers = [
-  {
-    name: "Trial",
-    price: "Free",
-    desc: "See the platform and try the fundamentals.",
-    items: [
-      "3 guided modules",
-      "Style reference library",
-      "Basic progress tracker",
-    ],
-    accent: false,
-  },
-  {
-    name: "Subscription",
-    price: "$29/mo",
-    desc: "Full access to structured learning and AI tools.",
-    items: [
-      "All guided modules",
-      "AI practice feedback",
-      "Style deep-dives",
-      "Community access",
-    ],
-    accent: true,
-  },
-  {
-    name: "Premium",
-    price: "$79/mo",
-    desc: "For serious students — everything, plus mentorship.",
-    items: [
-      "Everything in Subscription",
-      "Live mentor sessions",
-      "Portfolio review",
-      "Priority feedback",
-    ],
-    accent: false,
+    title: "REST API",
+    desc: "Custom backend built with Node.js and Express. Auth, user data, progress tracking, and content delivery.",
   },
 ];
 
 const stack = [
   "Next.js",
   "React",
+  "TypeScript",
   "Tailwind CSS",
-  "OpenAI API",
+  "Node.js",
+  "Express",
+  "REST API",
+  "Authentication",
+  "User Profiles",
   "Stripe",
-  "Prisma",
-  "PostgreSQL",
   "Vercel",
+];
+
+const buildHighlights = [
+  { label: "Type", value: "Original SaaS — not a clone" },
+  { label: "Backend", value: "Custom Node.js + Express REST API" },
+  { label: "Auth", value: "Full authentication and user profiles" },
+  { label: "Status", value: "Live — premium tier in development" },
+  { label: "Built by", value: "IMDEV / Isaac Mackenzie" },
 ];
 
 export default function InkPlanPage() {
@@ -127,7 +100,7 @@ export default function InkPlanPage() {
                 alignItems: "center",
                 justifyContent: "center",
                 gap: 12,
-                marginBottom: 20,
+                marginBottom: 22,
               }}
             >
               <span className="badge">Flagship Product</span>
@@ -139,20 +112,29 @@ export default function InkPlanPage() {
                   color: "var(--purple)",
                 }}
               >
+                Original Build
+              </span>
+              <span
+                className="badge"
+                style={{
+                  borderColor: "rgba(167,139,250,0.3)",
+                  background: "rgba(167,139,250,0.1)",
+                  color: "var(--purple)",
+                }}
+              >
                 AI-Powered
               </span>
             </div>
-            <h1 className="fade-up-1" style={{ marginBottom: 10 }}>
+            <h1 className="fade-up-1" style={{ marginBottom: 12 }}>
               Ink<span style={{ color: "var(--accent)" }}>Plan</span>
             </h1>
             <p
-              className="fade-up-1"
               style={{
-                fontFamily: "'Space Mono', monospace",
+                fontFamily: "'JetBrains Mono', monospace",
                 fontSize: "0.78rem",
                 letterSpacing: "0.16em",
                 color: "var(--text-muted)",
-                marginBottom: 28,
+                marginBottom: 24,
               }}
             >
               AI-POWERED TATTOO TRAINING PLATFORM
@@ -165,9 +147,10 @@ export default function InkPlanPage() {
                 fontSize: "1.05rem",
               }}
             >
-              Structured learning, style exploration, and AI-guided feedback for
-              tattoo artists at every level — built like a real niche product
-              with room to scale.
+              A full-stack SaaS built from scratch — not cloned, not a tutorial
+              project. InkPlan is a real product with a real backend, real
+              authentication, and a real market. Premium features currently in
+              development.
             </p>
             <div
               className="fade-up-3"
@@ -178,8 +161,13 @@ export default function InkPlanPage() {
                 flexWrap: "wrap",
               }}
             >
-              <a href="#tiers" className="btn-primary">
-                View Plans
+              <a
+                href="https://ink-plan-l95o.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
+                View Live App →
               </a>
               <Link href="/contact" className="btn-secondary">
                 Discuss This Build
@@ -188,20 +176,61 @@ export default function InkPlanPage() {
           </div>
         </section>
 
+        {/* ── Build highlights ─────────────────────────── */}
+        <section style={{ marginBottom: 72 }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+              gap: 16,
+            }}
+          >
+            {buildHighlights.map((h) => (
+              <div
+                key={h.label}
+                className="card-flat"
+                style={{ padding: "20px 24px" }}
+              >
+                <p
+                  style={{
+                    fontFamily: "'JetBrains Mono', monospace",
+                    fontSize: "0.66rem",
+                    color: "var(--accent)",
+                    letterSpacing: "0.12em",
+                    textTransform: "uppercase",
+                    marginBottom: 8,
+                  }}
+                >
+                  {h.label}
+                </p>
+                <p
+                  style={{
+                    fontSize: "0.88rem",
+                    color: "var(--text-soft)",
+                    lineHeight: 1.5,
+                  }}
+                >
+                  {h.value}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* ── Features ─────────────────────────────────── */}
         <section style={{ marginBottom: 80 }}>
           <div style={{ textAlign: "center", marginBottom: 48 }}>
             <span className="eyebrow" style={{ marginBottom: 12 }}>
-              Platform Features
+              What We Built
             </span>
             <h2 style={{ fontSize: "clamp(1.5rem, 2.8vw, 2.2rem)" }}>
-              Built for real learning outcomes.
+              A real product with real features.
             </h2>
           </div>
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gridTemplateColumns: "repeat(3, 1fr)",
               gap: 20,
             }}
           >
@@ -217,116 +246,14 @@ export default function InkPlanPage() {
           </div>
         </section>
 
-        {/* ── Tiers ────────────────────────────────────── */}
-        <section id="tiers" style={{ marginBottom: 80 }}>
-          <div style={{ textAlign: "center", marginBottom: 48 }}>
-            <span className="eyebrow" style={{ marginBottom: 12 }}>
-              Pricing Tiers
-            </span>
-            <h2 style={{ fontSize: "clamp(1.5rem, 2.8vw, 2.2rem)" }}>
-              A path for every student.
-            </h2>
-          </div>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-              gap: 20,
-            }}
-          >
-            {tiers.map((t) => (
-              <div
-                key={t.name}
-                className="card-flat"
-                style={{
-                  borderColor: t.accent
-                    ? "var(--border-accent)"
-                    : "var(--border)",
-                  background: t.accent
-                    ? "rgba(0,245,196,0.04)"
-                    : "var(--bg-surface)",
-                  position: "relative",
-                }}
-              >
-                {t.accent && (
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: -12,
-                      left: "50%",
-                      transform: "translateX(-50%)",
-                    }}
-                  >
-                    <span className="badge">Most Popular</span>
-                  </div>
-                )}
-                <p
-                  style={{
-                    fontFamily: "'Space Mono', monospace",
-                    fontSize: "0.7rem",
-                    letterSpacing: "0.16em",
-                    textTransform: "uppercase",
-                    color: "var(--text-muted)",
-                    marginBottom: 10,
-                  }}
-                >
-                  {t.name}
-                </p>
-                <div className="stat-num" style={{ marginBottom: 6 }}>
-                  {t.price}
-                </div>
-                <p style={{ fontSize: "0.88rem", marginBottom: 20 }}>
-                  {t.desc}
-                </p>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 10,
-                    marginBottom: 24,
-                  }}
-                >
-                  {t.items.map((item) => (
-                    <div
-                      key={item}
-                      style={{ display: "flex", alignItems: "center", gap: 10 }}
-                    >
-                      <span
-                        style={{ color: "var(--accent)", fontSize: "0.8rem" }}
-                      >
-                        ✓
-                      </span>
-                      <span
-                        style={{
-                          fontSize: "0.88rem",
-                          color: "var(--text-soft)",
-                        }}
-                      >
-                        {item}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-                <Link
-                  href="/contact"
-                  className={t.accent ? "btn-primary" : "btn-secondary"}
-                  style={{ width: "100%", justifyContent: "center" }}
-                >
-                  Get Started
-                </Link>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* ── Tech stack ───────────────────────────────── */}
+        {/* ── Stack ────────────────────────────────────── */}
         <section style={{ marginBottom: 80 }}>
           <div style={{ textAlign: "center", marginBottom: 36 }}>
             <span className="eyebrow" style={{ marginBottom: 12 }}>
               Tech Stack
             </span>
             <h2 style={{ fontSize: "clamp(1.5rem, 2.8vw, 2.2rem)" }}>
-              Built to last.
+              Built to last and scale.
             </h2>
           </div>
           <div
@@ -348,19 +275,19 @@ export default function InkPlanPage() {
         {/* ── CTA ──────────────────────────────────────── */}
         <section
           className="panel"
-          style={{ padding: "56px 44px", textAlign: "center" }}
+          style={{ padding: "64px 48px", textAlign: "center" }}
         >
           <div className="panel-glow" />
           <div
             style={{
               position: "relative",
               zIndex: 1,
-              maxWidth: 520,
+              maxWidth: 540,
               margin: "0 auto",
             }}
           >
             <span className="eyebrow" style={{ marginBottom: 14 }}>
-              Interested in InkPlan?
+              Want something like this?
             </span>
             <h2
               style={{
@@ -368,11 +295,11 @@ export default function InkPlanPage() {
                 marginBottom: 14,
               }}
             >
-              Want a build like this for your niche?
+              We build original products for real markets.
             </h2>
-            <p style={{ marginBottom: 28 }}>
-              IMDEV builds focused, AI-powered products for underserved markets.
-              Let&apos;s talk about yours.
+            <p style={{ marginBottom: 32 }}>
+              IMDEV specializes in building focused, well-architected products
+              for niche markets. If you have an idea — let&apos;s build it.
             </p>
             <div
               style={{

@@ -8,13 +8,13 @@ const services = [
     icon: "⬡",
     title: "Web Development",
     tag: "Core Service",
-    desc: "From landing pages to full-scale web platforms — built fast, built clean, built to last. Every project uses a modern stack with performance and maintainability built in from day one.",
+    desc: "Marketing sites, landing pages, and company websites that perform. We build fast, clean, and scalable — optimized for search, designed for conversion, and easy to maintain.",
     bullets: [
       "Next.js, React, Tailwind CSS",
-      "Responsive, accessible, performant",
-      "Custom CMS integration",
-      "SEO-ready architecture",
-      "Deployment & hosting setup",
+      "Responsive and accessible across all devices",
+      "SEO-ready architecture from day one",
+      "CMS integration on request",
+      "Deployment and hosting setup included",
     ],
     cta: "Start a Web Project",
   },
@@ -23,11 +23,11 @@ const services = [
     icon: "◈",
     title: "App Builds",
     tag: "Product Dev",
-    desc: "Full product development from idea to deployed app. We handle architecture, UI, backend integration, and everything in between — so you get a real product, not a prototype.",
+    desc: "Full product development from idea to deployed app. We handle architecture, UI, backend integration, auth, payments, and everything in between — so you get a real product, not a prototype.",
     bullets: [
-      "Product scoping & roadmapping",
-      "Front-end & full-stack builds",
-      "Auth, payments, user dashboards",
+      "Product scoping and roadmapping",
+      "Frontend and full-stack builds",
+      "Auth, payments, and user dashboards",
       "Mobile-responsive web apps",
       "Scalable, maintainable codebase",
     ],
@@ -42,9 +42,9 @@ const services = [
     bullets: [
       "LLM API integration (OpenAI, Anthropic)",
       "AI-powered product features",
-      "Prompt engineering & fine-tuning",
+      "Prompt engineering and optimization",
       "Automation pipelines",
-      "Responsible AI implementation",
+      "Responsible, production-ready implementation",
     ],
     cta: "Integrate AI",
   },
@@ -53,13 +53,13 @@ const services = [
     icon: "◎",
     title: "Consulting",
     tag: "Strategy",
-    desc: "Sharp technical perspective for founders, product teams, and businesses. We help you make the right decisions before you write a line of code — or audit what already exists.",
+    desc: "Sharp technical perspective for founders, product teams, and businesses. We help you make the right decisions before you write a line of code — or audit and improve what already exists.",
     bullets: [
       "Technical architecture review",
-      "Stack selection & planning",
+      "Stack selection and planning",
       "Product strategy sessions",
-      "Code & UX audits",
-      "Hiring & team structure advice",
+      "Code and UX audits",
+      "Team structure and hiring advice",
     ],
     cta: "Book a Consult",
   },
@@ -70,13 +70,28 @@ const services = [
     tag: "Partnerships",
     desc: "Open to meaningful partnerships with founders, agencies, and developers. If you have a vision that needs sharp execution, let's talk about how we build it together.",
     bullets: [
-      "Founder partnerships",
+      "Founder and startup partnerships",
       "Agency white-label work",
       "Developer team-ups",
       "Equity or revenue-share models",
       "Long-term product partnerships",
     ],
     cta: "Propose a Collab",
+  },
+  {
+    id: "support",
+    icon: "✦",
+    title: "Support & Maintenance",
+    tag: "Ongoing",
+    desc: "Remote support, bug fixes, feature additions, and performance tuning for existing products. We slot into your existing codebase and keep things running — or make them better.",
+    bullets: [
+      "Bug fixes and performance optimization",
+      "Feature additions to existing products",
+      "Code refactoring and cleanup",
+      "Remote engineering contracts",
+      "On-call support arrangements",
+    ],
+    cta: "Get Support",
   },
 ];
 
@@ -99,7 +114,7 @@ const process = [
   {
     step: "04",
     title: "Ship",
-    desc: "Deployed, tested, and handed off clean with docs.",
+    desc: "Deployed, tested, and handed off clean with documentation.",
   },
 ];
 
@@ -131,7 +146,7 @@ export default function ServicesPage() {
       <div className="container" style={{ position: "relative", zIndex: 1 }}>
         {/* ── Header ───────────────────────────────────── */}
         <section
-          style={{ textAlign: "center", maxWidth: 680, margin: "0 auto 72px" }}
+          style={{ textAlign: "center", maxWidth: 680, margin: "0 auto 80px" }}
         >
           <span className="eyebrow fade-up" style={{ marginBottom: 16 }}>
             Services
@@ -142,10 +157,10 @@ export default function ServicesPage() {
           >
             Everything your product needs.
           </h1>
-          <p className="fade-up-2">
+          <p className="fade-up-2" style={{ fontSize: "1.05rem" }}>
             From first line of code to live product — IMDEV handles web
             development, app builds, AI features, consulting, and long-term
-            collaborations.
+            partnerships.
           </p>
         </section>
 
@@ -157,7 +172,7 @@ export default function ServicesPage() {
                 key={s.id}
                 id={s.id}
                 className="panel"
-                style={{ padding: "48px 44px" }}
+                style={{ padding: "52px 48px" }}
               >
                 <div className="panel-glow" />
                 <div
@@ -176,7 +191,7 @@ export default function ServicesPage() {
                         display: "flex",
                         alignItems: "center",
                         gap: 14,
-                        marginBottom: 20,
+                        marginBottom: 22,
                       }}
                     >
                       <div className="icon-box" style={{ marginBottom: 0 }}>
@@ -192,7 +207,7 @@ export default function ServicesPage() {
                     >
                       {s.title}
                     </h2>
-                    <p style={{ maxWidth: 560, marginBottom: 28 }}>{s.desc}</p>
+                    <p style={{ maxWidth: 580, marginBottom: 28 }}>{s.desc}</p>
                     <ul
                       style={{
                         display: "flex",
@@ -208,12 +223,13 @@ export default function ServicesPage() {
                             display: "flex",
                             alignItems: "center",
                             gap: 10,
+                            listStyle: "none",
                           }}
                         >
                           <span
                             style={{
                               color: "var(--accent)",
-                              fontFamily: "'Space Mono', monospace",
+                              fontFamily: "'JetBrains Mono', monospace",
                               fontSize: "0.8rem",
                             }}
                           >
@@ -236,10 +252,10 @@ export default function ServicesPage() {
                   </div>
                   <div
                     style={{
-                      fontFamily: "'Space Mono', monospace",
-                      fontSize: "clamp(3rem, 5vw, 5rem)",
+                      fontFamily: "'JetBrains Mono', monospace",
+                      fontSize: "clamp(3rem, 5vw, 5.5rem)",
                       fontWeight: 700,
-                      color: "rgba(0,245,196,0.07)",
+                      color: "rgba(0,245,196,0.06)",
                       lineHeight: 1,
                       userSelect: "none",
                       flexShrink: 0,
@@ -254,10 +270,10 @@ export default function ServicesPage() {
         </section>
 
         {/* ── Process ──────────────────────────────────── */}
-        <section style={{ marginBottom: 80 }}>
-          <div style={{ textAlign: "center", marginBottom: 48 }}>
+        <section style={{ marginBottom: 88 }}>
+          <div style={{ textAlign: "center", marginBottom: 52 }}>
             <span className="eyebrow" style={{ marginBottom: 12 }}>
-              How It Works
+              How We Work
             </span>
             <h2 style={{ fontSize: "clamp(1.5rem, 2.8vw, 2.2rem)" }}>
               A process built for clarity.
@@ -266,23 +282,23 @@ export default function ServicesPage() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+              gridTemplateColumns: "repeat(4, 1fr)",
               gap: 20,
             }}
           >
             {process.map((p) => (
               <div key={p.step} className="card-flat">
-                <div
+                <p
                   style={{
-                    fontFamily: "'Space Mono', monospace",
+                    fontFamily: "'JetBrains Mono', monospace",
                     fontSize: "0.7rem",
                     color: "var(--accent)",
                     letterSpacing: "0.16em",
-                    marginBottom: 14,
+                    marginBottom: 16,
                   }}
                 >
                   {p.step}
-                </div>
+                </p>
                 <h3 style={{ marginBottom: 10 }}>{p.title}</h3>
                 <p style={{ fontSize: "0.9rem" }}>{p.desc}</p>
               </div>
@@ -293,7 +309,7 @@ export default function ServicesPage() {
         {/* ── CTA ──────────────────────────────────────── */}
         <section
           className="panel"
-          style={{ padding: "56px 44px", textAlign: "center" }}
+          style={{ padding: "64px 48px", textAlign: "center" }}
         >
           <div className="panel-glow" />
           <div
@@ -305,7 +321,7 @@ export default function ServicesPage() {
             }}
           >
             <span className="eyebrow" style={{ marginBottom: 14 }}>
-              Let&apos;s Work Together
+              Ready to Start?
             </span>
             <h2
               style={{
@@ -313,11 +329,11 @@ export default function ServicesPage() {
                 marginBottom: 14,
               }}
             >
-              Ready to get started?
+              Tell us what you&apos;re building.
             </h2>
-            <p style={{ marginBottom: 28 }}>
-              Tell us what you need. We&apos;ll respond within 24 hours with a
-              clear path forward.
+            <p style={{ marginBottom: 32 }}>
+              We respond within 24 hours with honest feedback and a clear path
+              forward.
             </p>
             <div
               style={{
@@ -328,7 +344,7 @@ export default function ServicesPage() {
               }}
             >
               <Link href="/contact" className="btn-primary">
-                Contact IMDEV
+                Start a Project
               </Link>
               <Link href="/projects" className="btn-secondary">
                 See Our Work
