@@ -1,64 +1,29 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-
-const filters = ["All", "SaaS", "AI", "Web App", "Flagship"];
 
 const projects = [
   {
     title: "InkPlan",
-    tag: "Flagship",
-    filters: ["All", "Flagship", "SaaS", "AI"],
-    desc: "AI-powered tattoo training SaaS. Structured learning paths, style exploration, user progress tracking, REST API, and subscription tiers — built from scratch, not cloned.",
-    tech: ["Next.js", "Node.js", "Express", "Auth", "REST API"],
+    tag: "Flagship · SaaS",
+    desc: "AI-powered tattoo training platform. Structured learning paths, style exploration, user progress tracking, REST API, and subscription tiers — built from scratch, not cloned. Currently being optimized for monetization.",
+    tech: ["Next.js", "Node.js", "Express", "Auth", "REST API", "TypeScript"],
     status: "Live",
     href: "/inkplan",
     live: "https://ink-plan-l95o.vercel.app/",
   },
   {
-    title: "Summarist",
-    tag: "SaaS",
-    filters: ["All", "SaaS", "Web App"],
-    desc: "Full-stack subscription platform with Firebase authentication, protected routes, Stripe payment integration, and scalable UI architecture.",
-    tech: ["Next.js", "Firebase", "Stripe", "TypeScript"],
-    status: "Shipped",
-    href: "/projects",
-    live: null,
-  },
-  {
-    title: "Skinstric",
-    tag: "AI App",
-    filters: ["All", "AI", "Web App"],
-    desc: "AI skincare analysis application with camera-to-analysis workflow, real-time feedback, GSAP animations, and ~2 second analysis results. Built for a live client.",
-    tech: ["Next.js", "AI", "GSAP", "TailwindCSS"],
-    status: "Live",
-    href: "/projects",
-    live: null,
-  },
-  {
     title: "IMDEV",
-    tag: "Web",
-    filters: ["All", "Web App"],
-    desc: "The site you're on — IMDEV's company platform. Built as a client-facing studio site with full service offerings, project showcase, and contact flow.",
-    tech: ["Next.js", "Tailwind", "Framer Motion", "TypeScript"],
+    tag: "Studio Site",
+    desc: "IMDEV's company platform — built as a client-facing software studio site with full service offerings, project showcase, about, and contact flow. Designed to attract clients, contracts, and remote engineering opportunities.",
+    tech: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
     status: "Live",
     href: "/",
     live: null,
   },
 ];
 
-const statusColor: Record<string, string> = {
-  Live: "var(--accent)",
-  Shipped: "var(--accent)",
-  "In Progress": "var(--purple)",
-};
-
 export default function ProjectsPage() {
-  const [active, setActive] = useState("All");
-
-  const visible = projects.filter((p) => p.filters.includes(active));
-
   return (
     <main className="page-shell">
       <div
@@ -75,7 +40,7 @@ export default function ProjectsPage() {
       <div className="container" style={{ position: "relative", zIndex: 1 }}>
         {/* ── Header ───────────────────────────────────── */}
         <section
-          style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 56px" }}
+          style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 72px" }}
         >
           <span className="eyebrow fade-up" style={{ marginBottom: 16 }}>
             Our Work
@@ -87,149 +52,154 @@ export default function ProjectsPage() {
             Products we&apos;ve built and shipped.
           </h1>
           <p className="fade-up-2">
-            A growing portfolio of web apps, SaaS products, and AI-powered
-            experiences — each one built with intent and shipped to production.
+            Original builds — not clones, not tutorials. Real products with real
+            architecture, shipped to production.
           </p>
         </section>
 
-        {/* ── Filters ──────────────────────────────────── */}
-        <div
-          style={{
-            display: "flex",
-            gap: 10,
-            justifyContent: "center",
-            flexWrap: "wrap",
-            marginBottom: 52,
-          }}
-        >
-          {filters.map((f) => (
-            <button
-              key={f}
-              onClick={() => setActive(f)}
-              style={{
-                padding: "8px 20px",
-                borderRadius: 999,
-                border: "1px solid",
-                borderColor:
-                  active === f ? "var(--border-accent)" : "var(--border)",
-                background:
-                  active === f ? "var(--accent-dim)" : "var(--bg-surface)",
-                color: active === f ? "var(--accent)" : "var(--text-muted)",
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: "0.7rem",
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                cursor: "pointer",
-                transition: "all 0.2s ease",
-              }}
-            >
-              {f}
-            </button>
-          ))}
-        </div>
-
-        {/* ── Grid ─────────────────────────────────────── */}
+        {/* ── Projects ─────────────────────────────────── */}
         <section style={{ marginBottom: 88 }}>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
-              gap: 24,
-            }}
-          >
-            {visible.map((p) => (
+          <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
+            {projects.map((p, i) => (
               <div
                 key={p.title}
-                className="card"
-                style={{ display: "flex", flexDirection: "column" }}
+                className="panel"
+                style={{ padding: "52px 48px" }}
               >
+                <div className="panel-glow" />
                 <div
                   style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    marginBottom: 18,
+                    position: "relative",
+                    zIndex: 1,
+                    display: "grid",
+                    gridTemplateColumns: "1fr auto",
+                    gap: 32,
+                    alignItems: "start",
                   }}
                 >
-                  <span className="badge">{p.tag}</span>
-                  <span
-                    style={{
-                      fontFamily: "'JetBrains Mono', monospace",
-                      fontSize: "0.65rem",
-                      letterSpacing: "0.08em",
-                      color: statusColor[p.status] ?? "var(--text-muted)",
-                    }}
-                  >
-                    ● {p.status}
-                  </span>
-                </div>
-                <h3 style={{ marginBottom: 10 }}>{p.title}</h3>
-                <p style={{ fontSize: "0.9rem", marginBottom: 20, flex: 1 }}>
-                  {p.desc}
-                </p>
-                <div
-                  style={{
-                    display: "flex",
-                    gap: 8,
-                    flexWrap: "wrap",
-                    marginBottom: 20,
-                  }}
-                >
-                  {p.tech.map((t) => (
-                    <span
-                      key={t}
-                      className="pill"
-                      style={{ fontSize: "0.66rem" }}
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-                <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-                  <Link
-                    href={p.href}
-                    style={{
-                      fontFamily: "'JetBrains Mono', monospace",
-                      fontSize: "0.7rem",
-                      color: "var(--accent)",
-                      letterSpacing: "0.08em",
-                    }}
-                  >
-                    View Project →
-                  </Link>
-                  {p.live && (
-                    <a
-                      href={p.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                  <div>
+                    <div
                       style={{
-                        fontFamily: "'JetBrains Mono', monospace",
-                        fontSize: "0.7rem",
-                        color: "var(--text-muted)",
-                        letterSpacing: "0.08em",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 12,
+                        marginBottom: 20,
                       }}
                     >
-                      Live Demo →
-                    </a>
-                  )}
+                      <span className="badge">{p.tag}</span>
+                      <span
+                        style={{
+                          fontFamily: "'JetBrains Mono', monospace",
+                          fontSize: "0.65rem",
+                          letterSpacing: "0.08em",
+                          color: "var(--accent)",
+                        }}
+                      >
+                        ● {p.status}
+                      </span>
+                    </div>
+                    <h2
+                      style={{
+                        fontSize: "clamp(1.6rem, 3vw, 2.4rem)",
+                        marginBottom: 14,
+                      }}
+                    >
+                      {p.title}
+                    </h2>
+                    <p
+                      style={{
+                        maxWidth: 580,
+                        marginBottom: 24,
+                        fontSize: "0.95rem",
+                      }}
+                    >
+                      {p.desc}
+                    </p>
+                    <div
+                      style={{
+                        display: "flex",
+                        gap: 8,
+                        flexWrap: "wrap",
+                        marginBottom: 32,
+                      }}
+                    >
+                      {p.tech.map((t) => (
+                        <span key={t} className="pill">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                    <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+                      <Link
+                        href={p.href}
+                        className="btn-secondary"
+                        style={{
+                          minHeight: 40,
+                          fontSize: "0.72rem",
+                          padding: "0 20px",
+                        }}
+                      >
+                        View Details →
+                      </Link>
+                      {p.live && (
+                        <a
+                          href={p.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn-primary"
+                          style={{
+                            minHeight: 40,
+                            fontSize: "0.72rem",
+                            padding: "0 20px",
+                          }}
+                        >
+                          Live App →
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: "'JetBrains Mono', monospace",
+                      fontSize: "clamp(4rem, 6vw, 7rem)",
+                      fontWeight: 700,
+                      color: "rgba(0,245,196,0.05)",
+                      lineHeight: 1,
+                      userSelect: "none",
+                      flexShrink: 0,
+                    }}
+                  >
+                    0{i + 1}
+                  </div>
                 </div>
               </div>
             ))}
           </div>
+        </section>
 
-          {visible.length === 0 && (
-            <div
+        {/* ── More coming ──────────────────────────────── */}
+        <section style={{ marginBottom: 88, textAlign: "center" }}>
+          <div
+            className="card-flat"
+            style={{ padding: "40px 32px", maxWidth: 560, margin: "0 auto" }}
+          >
+            <p
               style={{
-                textAlign: "center",
-                padding: "60px 0",
-                color: "var(--text-muted)",
                 fontFamily: "'JetBrains Mono', monospace",
-                fontSize: "0.8rem",
+                fontSize: "0.7rem",
+                color: "var(--accent)",
+                letterSpacing: "0.16em",
+                marginBottom: 12,
               }}
             >
-              No projects in this category yet.
-            </div>
-          )}
+              MORE COMING
+            </p>
+            <h3 style={{ marginBottom: 12 }}>New projects in the pipeline.</h3>
+            <p style={{ fontSize: "0.9rem" }}>
+              IMDEV is actively building. Check back soon or follow along on
+              GitHub.
+            </p>
+          </div>
         </section>
 
         {/* ── CTA ──────────────────────────────────────── */}
