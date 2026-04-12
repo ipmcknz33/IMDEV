@@ -42,7 +42,7 @@ const services = [
 ];
 
 const stats = [
-  { num: "3", label: "Products shipped" },
+  { num: "2", label: "Products shipped" },
   { num: "100%", label: "Deadline completion rate" },
   { num: "3-day", label: "Avg delivery cycle" },
   { num: "∞", label: "Room to scale" },
@@ -56,6 +56,14 @@ const featuredWork = [
     tech: ["Next.js", "Node.js", "Express", "Auth", "REST API"],
     href: "/inkplan",
     live: "https://ink-plan-l95o.vercel.app/",
+  },
+  {
+    tag: "Studio Site",
+    title: "IMDEV",
+    desc: "IMDEV's company platform — client-facing software studio site with full service offerings, project showcase, and contact flow.",
+    tech: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
+    href: "/projects",
+    live: "https://imdev.studio",
   },
 ];
 
