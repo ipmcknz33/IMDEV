@@ -10,7 +10,7 @@ const projects = [
     tech: ["Next.js", "Node.js", "Express", "Auth", "REST API", "TypeScript"],
     status: "Live",
     href: "/inkplan",
-    live: "https://ink-plan-l95o.vercel.app/",
+    live: "https://inkplan.net/",
   },
   {
     title: "IMDEV",

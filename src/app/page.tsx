@@ -55,7 +55,7 @@ const featuredWork = [
     desc: "AI-powered tattoo training platform. Structured learning, style exploration, and subscription tiers — built from scratch as a real niche product.",
     tech: ["Next.js", "Node.js", "Express", "Auth", "REST API"],
     href: "/inkplan",
-    live: "https://ink-plan-l95o.vercel.app/",
+    live: "https://inkplan.net/",
   },
   {
     tag: "Studio Site",
