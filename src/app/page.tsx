@@ -65,6 +65,14 @@ const featuredWork = [
     href: "/projects",
     live: "https://imdev.studio",
   },
+  {
+    tag: "Design & development",
+    title: "Tattoos by Isaac",
+    desc: "Full-stack design and build for a working tattoo studio. Custom online booking, a Supabase-backed client CRM with database-level role access, and an AI-assisted editorial journal — live in production.",
+    tech: ["Next.js", "TypeScript", "Supabase", "Resend", "Anthropic API"],
+    href: "/projects",
+    live: "https://tattoosbyisaac.com",
+  },
 ];
 
 export default function Home() {
