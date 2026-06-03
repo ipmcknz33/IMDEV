@@ -21,6 +21,24 @@ const projects = [
     href: "/",
     live: null,
   },
+  {
+    title: "Tattoos by Isaac",
+    tag: "Design & development",
+    desc: "Full-stack design and build for a working tattoo studio. Custom online booking with email delivery and reference-image uploads, a Supabase-backed client CRM with role-based access enforced at the database level, and an AI-assisted editorial journal behind a publish gate. Live in production on Vercel.",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Supabase",
+      "Resend",
+      "Anthropic API",
+      "Vercel",
+    ],
+    status: "Live",
+    href: null,
+    live: "https://tattoosbyisaac.com",
+  },
 ];
 
 export default function ProjectsPage() {
@@ -130,17 +148,19 @@ export default function ProjectsPage() {
                       ))}
                     </div>
                     <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                      <Link
-                        href={p.href}
-                        className="btn-secondary"
-                        style={{
-                          minHeight: 40,
-                          fontSize: "0.72rem",
-                          padding: "0 20px",
-                        }}
-                      >
-                        View Details →
-                      </Link>
+                      {p.href && (
+                        <Link
+                          href={p.href}
+                          className="btn-secondary"
+                          style={{
+                            minHeight: 40,
+                            fontSize: "0.72rem",
+                            padding: "0 20px",
+                          }}
+                        >
+                          View Details →
+                        </Link>
+                      )}
                       {p.live && (
                         <a
                           href={p.live}
