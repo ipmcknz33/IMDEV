@@ -42,7 +42,7 @@ const services = [
 ];
 
 const stats = [
-  { num: "2", label: "Products shipped" },
+  { num: "4", label: "Products shipped" },
   { num: "100%", label: "Deadline completion rate" },
   { num: "3-day", label: "Avg delivery cycle" },
   { num: "∞", label: "Room to scale" },
@@ -72,6 +72,14 @@ const featuredWork = [
     tech: ["Next.js", "TypeScript", "Supabase", "Resend", "Anthropic API"],
     href: "/projects",
     live: "https://tattoosbyisaac.com",
+  },
+  {
+    tag: "Design & development",
+    title: "DBB Lawn Care",
+    desc: "Brand, build, and launch for a local lawn-care business — IMDEV's first client. Custom logo and identity, a conversion-focused lead-gen site, and an instant text + email lead pipeline with customer photos — live in production.",
+    tech: ["Next.js", "Tailwind CSS", "Framer Motion", "Resend", "Vercel"],
+    href: "/projects",
+    live: "https://dbblawncare.com",
   },
 ];
 
