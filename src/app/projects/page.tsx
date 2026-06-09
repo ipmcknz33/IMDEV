@@ -4,6 +4,21 @@ import Link from "next/link";
 
 const projects = [
   {
+    title: "DBB Lawn Care",
+    tag: "Design & development",
+    desc: "End-to-end design and build for a local lawn-care business — IMDEV's first client engagement. Custom logo and brand identity, a conversion-focused lead-generation site, and an instant lead pipeline that delivers every request by text and by email with the customer's reference photos attached. Domain, business email, and a Google Business Profile listing all wired in and verified. Live in production on Vercel.",
+    tech: [
+      "Next.js",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Resend",
+      "Vercel",
+    ],
+    status: "Live",
+    href: null,
+    live: "https://dbblawncare.com",
+  },
+  {
     title: "InkPlan",
     tag: "Flagship · SaaS",
     desc: "AI-powered tattoo training platform. Structured learning paths, style exploration, user progress tracking, REST API, and subscription tiers — built from scratch, not cloned. Currently being optimized for monetization.",
@@ -38,21 +53,6 @@ const projects = [
     status: "Live",
     href: null,
     live: "https://tattoosbyisaac.com",
-  },
-  {
-    title: "DBB Lawn Care",
-    tag: "Design & development",
-    desc: "End-to-end design and build for a local lawn-care business — IMDEV's first client engagement. Custom logo and brand identity, a conversion-focused lead-generation site, and an instant lead pipeline that delivers every request by text and by email with the customer's reference photos attached. Domain, business email, and a Google Business Profile listing all wired in and verified. Live in production on Vercel.",
-    tech: [
-      "Next.js",
-      "Tailwind CSS",
-      "Framer Motion",
-      "Resend",
-      "Vercel",
-    ],
-    status: "Live",
-    href: null,
-    live: "https://dbblawncare.com",
   },
 ];
 
