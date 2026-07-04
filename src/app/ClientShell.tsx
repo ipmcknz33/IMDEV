@@ -34,8 +34,8 @@ function Header() {
       <div className="container">
         <div className="nav-wrap">
           <Link href="/" className="brand-mark" aria-label="IMDEV Home">
-            <span className="brand-dot" />
             <span>IMDEV</span>
+            <span className="brand-dot" />
           </Link>
 
           <nav className="nav-links" aria-label="Primary navigation">

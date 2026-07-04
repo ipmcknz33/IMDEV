@@ -181,13 +181,13 @@ p {
 
 .brand-mark {
   display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-family: 'JetBrains Mono', monospace;
+  align-items: flex-end;
+  gap: 4px;
+  font-family: var(--font-space-grotesk), 'JetBrains Mono', monospace;
   font-weight: 700;
-  font-size: 0.88rem;
-  letter-spacing: 0.18em;
-  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  color: #f2f4f3;
   flex-shrink: 0;
   transition: opacity 0.2s;
 }
@@ -197,24 +197,25 @@ p {
 }
 
 .brand-dot {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 12px rgba(0, 245, 196, 0.75);
+  background: #17e6b3;
+  box-shadow: 0 0 12px rgba(23, 230, 179, 0.75);
   animation: dotPulse 3s ease-in-out infinite;
   flex-shrink: 0;
+  margin-bottom: 2px;
 }
 
 @keyframes dotPulse {
 
   0%,
   100% {
-    box-shadow: 0 0 12px rgba(0, 245, 196, 0.75);
+    box-shadow: 0 0 12px rgba(23, 230, 179, 0.75);
   }
 
   50% {
-    box-shadow: 0 0 26px rgba(0, 245, 196, 1);
+    box-shadow: 0 0 26px rgba(23, 230, 179, 1);
   }
 }
 

@@ -1,7 +1,15 @@
 import type { Metadata } from "next";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import ClientShell from "./ClientShell";
 import JsonLd from "./JsonLd";
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["500", "700"],
+  variable: "--font-space-grotesk",
+  display: "swap",
+});
 
 const title = "IMDEV | Web Development & AI Integration";
 const description =
@@ -37,7 +45,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={spaceGrotesk.variable}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
